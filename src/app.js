@@ -1,7 +1,9 @@
 const express = require("express");
-const router = express.Router();
 const app = express();
 const port = 3000;
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 const index = require("./routes/index.js");
 const carros = require("./routes/carros-route.js");
