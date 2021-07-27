@@ -11,14 +11,14 @@ exports.getById = (req, res) => {
 };
 
 exports.post = (req, res) => {
-  res.json(carroService.add(new Carro(req.body.nome, req.body.preco)));
+  res.json(carroService.add(new Carro(req.body.nome, req.body.marca, req.body.anoFabricacao, req.body.anoModelo, req.body.dataVenda)));
 };
 
 exports.put = (req, res) => {
   res.json(
     carroService.update(
       req.params.id,
-      new Carro(req.body.nome, req.body.preco)
+      new Carro(req.body.nome, req.body.marca, req.body.anoFabricacao, req.body.anoModelo, req.body.dataVenda)
     )
   );
 };

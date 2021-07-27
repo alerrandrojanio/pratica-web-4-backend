@@ -35,7 +35,7 @@ class CarroService {
   }
   
   delete(id) {
-    this.products = this.products.filter(function (c) {
+    this.carros = this.carros.filter(function (c) {
       return c.id != id;
     });
   }
