@@ -2,6 +2,7 @@ class CarroService {
   constructor() {
     this.carros = [];
     this.id = 0;
+    this.qtd = 0;
   }
   
   add(carro) {
@@ -19,9 +20,21 @@ class CarroService {
   }
 
   getByMarca(marca) {
-    this.carros = this.carros.filter(function (c) {
+    return this.carros.filter(function (c) {
         return c.marca == marca;
     });
+    
+  }
+
+  getQtd(qtd){
+    const filtCar = [];
+    if(qtd > 0){
+      for(let i = 0;i<qtd;i++){
+        filtCar.push(this.carros[i]);
+      }
+
+      return filtCar;
+    }
   }
   
   update(id, carro) {

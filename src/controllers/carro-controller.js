@@ -10,6 +10,14 @@ exports.getById = (req, res) => {
   res.json(carroService.getById(req.params.id));
 };
 
+exports.getByMarca = (req, res) =>{
+  res.json(carroService.getByMarca(req.query.marca));
+};
+
+exports.getQtd = (req, res) =>{
+  res.json(carroService.getQtd(req.query.qtd));
+};
+
 exports.post = (req, res) => {
   res.json(carroService.add(new Carro(req.body.nome, req.body.marca, req.body.anoFabricacao, req.body.anoModelo, req.body.dataVenda)));
 };
